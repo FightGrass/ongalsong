@@ -1,4 +1,4 @@
-const cacheName = "babble-tunes-v6";
+const cacheName = "babble-tunes-v7";
 const assets = [
   "./",
   "./index.html",
@@ -7,8 +7,9 @@ const assets = [
   "./lucide.min.js",
   "./manifest.webmanifest",
   "./icon.svg",
-  "./icon-192.png",
-  "./icon-512.png",
+  "./icon-v2-192.png",
+  "./icon-v2-512.png",
+  "./apple-touch-icon-v2.png",
 ];
 
 self.addEventListener("install", (event) => {

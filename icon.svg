@@ -1,9 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-  <rect width="512" height="512" rx="108" fill="#f8f3ea"/>
-  <circle cx="256" cy="256" r="168" fill="#ffffff" opacity="0.78"/>
-  <path d="M152 282c44 52 128 52 172 0" fill="none" stroke="#1d8f86" stroke-width="34" stroke-linecap="round"/>
-  <path d="M130 226c56-70 196-70 252 0" fill="none" stroke="#c8923b" stroke-width="34" stroke-linecap="round"/>
-  <path d="M188 336c34 26 102 26 136 0" fill="none" stroke="#d75d68" stroke-width="34" stroke-linecap="round"/>
-  <circle cx="204" cy="238" r="18" fill="#1f2a2d"/>
-  <circle cx="308" cy="238" r="18" fill="#1f2a2d"/>
+  <rect width="512" height="512" fill="#17121d"/>
+  <text x="48" y="350" font-family="Apple SD Gothic Neo" font-size="196" font-weight="900" fill="#f49bbb">옹알</text>
+  <rect x="416" y="315" width="48" height="48" rx="12" fill="#73ddba"/>
 </svg>
