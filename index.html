@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#f4f7f8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="옹알송">
+    <title>옹알송</title>
+    <link rel="manifest" href="./manifest.webmanifest">
+    <link rel="icon" href="./icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="./icon-192.png">
+    <link rel="stylesheet" href="./styles.css?v=6">
+  </head>
+  <body>
+    <main class="shell">
+      <header class="app-header">
+        <div><p class="eyebrow">우리 아기의 소리 일기</p><h1>옹알송</h1></div>
+        <span class="privacy">기기에만 보관</span>
+      </header>
+      <section class="recorder" aria-labelledby="recordTitle">
+        <div class="section-title"><h2 id="recordTitle">오늘의 옹알이</h2><span id="recordStatus" role="status">녹음 준비</span></div>
+        <div class="waveform"><canvas id="visualizer" width="640" height="160" aria-label="소리 파형"></canvas></div>
+        <div class="meter-row"><p class="timer" id="timer">00:00</p><span class="limit">최대 1분</span></div>
+        <button class="primary action" id="recordButton" type="button"><i data-lucide="mic" aria-hidden="true"></i><span id="recordButtonText">녹음 시작</span></button>
+        <label class="file-button secondary" id="importLabel"><i data-lucide="folder-open" aria-hidden="true"></i>녹음 파일 불러오기<input id="audioFile" type="file" accept="audio/*,.m4a,.mp4,.wav,.mp3,.webm"></label>
+        <p class="hint" id="recordHint" role="status">짧은 옹알이도 좋아요.</p>
+        <div id="sourceSection" hidden>
+          <div class="section-title source-title"><h3>원본 녹음</h3><button class="text-button" id="clearButton" type="button" aria-label="녹음과 노래 지우기" title="녹음과 노래 지우기"><i data-lucide="trash-2" aria-hidden="true"></i></button></div>
+          <audio id="sourcePlayer" controls preload="metadata" aria-label="원본 녹음 듣기"></audio>
+          <a id="sourceDownload" class="text-button" download="babble-original.wav"><i data-lucide="download" aria-hidden="true"></i>원본 저장</a>
+        </div>
+      </section>
+      <section class="controls" aria-labelledby="styleTitle">
+        <div class="section-title"><h2 id="styleTitle">작은 노래 만들기</h2><span id="eventCount">녹음 대기</span></div>
+        <fieldset id="settings"><legend class="sr-only">음악 설정</legend>
+          <div class="segmented">
+            <label><input type="radio" name="style" value="musicbox" checked><span>오르골</span></label>
+            <label><input type="radio" name="style" value="lullaby"><span>자장가</span></label>
+            <label><input type="radio" name="style" value="lofi"><span>로파이</span></label>
+          </div>
+          <label class="switch"><input id="includeVoice" type="checkbox" checked><span class="switch-track" aria-hidden="true"></span><span>아기 목소리 함께 넣기</span></label>
+        </fieldset>
+        <button class="primary" id="makeButton" type="button" disabled>음악 만들기</button>
+      </section>
+      <section class="result" id="resultSection" aria-labelledby="resultTitle" hidden>
+        <div class="section-title"><h2 id="resultTitle">우리 아기의 노래</h2><span id="songState" role="status">대기 중</span></div>
+        <p class="song-date" id="songDate"></p>
+        <audio id="player" controls preload="metadata" aria-label="만든 노래 듣기"></audio>
+        <div class="result-actions">
+          <a class="secondary disabled" id="downloadLink" href="#" download="babble-song.wav" aria-disabled="true" tabindex="-1"><i data-lucide="download" aria-hidden="true"></i>노래 저장</a>
+          <button class="secondary" id="shareButton" type="button" disabled><i data-lucide="share" aria-hidden="true"></i>공유</button>
+        </div>
+      </section>
+      <footer>녹음은 외부로 전송되지 않아요.<br>최근 녹음과 노래 한 개가 이 기기에 남아요.</footer>
+    </main>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="./lucide.min.js"></script>
+    <script src="./app.js?v=6" type="module"></script>
+  </body>
+</html>
